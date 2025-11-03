@@ -1,1 +1,10 @@
-export const GOOGLE_FORM_URL = ''\n\nexport const PER_EVENT_FORM = {\n  'hackathon': 'file_here',\n  'debate': 'file_here',\n  'music': 'file_here',\n  'dance': 'file_here',\n  'quiz': 'file_here'\n}\n
+export const GOOGLE_FORM_URL = ''
+
+export const PER_EVENT_FORM = {
+  'hackathon': 'file_here',
+  'debate': 'file_here',
+  'music': 'file_here',
+  'dance': 'file_here',
+  'quiz': 'file_here'
+}
+

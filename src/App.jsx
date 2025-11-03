@@ -1,1 +1,35 @@
-import React, { useState } from 'react'\nimport Nav from './components/Nav.jsx'\nimport Footer from './components/Footer.jsx'\nimport Home from './pages/Home.jsx'\nimport Events from './pages/Events.jsx'\nimport Registration from './pages/Registration.jsx'\nimport Team from './pages/Team.jsx'\nimport Contact from './pages/Contact.jsx'\n\nexport default function App(){\n  const [route, setRoute] = useState(window.location.pathname || '/')\n  window.onpopstate = ()=> setRoute(window.location.pathname)\n  const navigate = (path)=>{ window.history.pushState({},'',path); setRoute(path); window.scrollTo(0,0) }\n\n  return (<div className="app">\n    <Nav navigate={navigate} />\n    <main style={{position:'relative',zIndex:2}}>\n      {route === '/' && <Home navigate={navigate} />}\n      {route === '/events' && <Events navigate={navigate} />}\n      {route === '/registration' && <Registration />}\n      {route === '/team-registration' && <Team />}\n      {route === '/contact' && <Contact />}\n    </main>\n    <Footer />\n  </div>)\n}\n
+import React, { useState } from 'react';
+import Nav from './components/Nav.jsx';
+import Footer from './components/Footer.jsx';
+import Home from './pages/Home.jsx';
+import Events from './pages/Events.jsx';
+import Registration from './pages/Registration.jsx';
+import Team from './pages/Team.jsx';
+import Contact from './pages/Contact.jsx';
+
+export default function App() {
+  const [route, setRoute] = useState(window.location.pathname || '/');
+
+  window.onpopstate = () => setRoute(window.location.pathname);
+
+  const navigate = (path) => {
+    window.history.pushState({}, '', path);
+    setRoute(path);
+    window.scrollTo(0, 0);
+  };
+
+  return (
+    <div className="app">
+      <Nav navigate={navigate} />
+      <main style={{ position: 'relative', zIndex: 2 }}>
+        {route === '/' && <Home navigate={navigate} />}
+        {route === '/events' && <Events navigate={navigate} />}
+        {route === '/registration' && <Registration />}
+        {route === '/team-registration' && <Team />}
+        {route === '/contact' && <Contact />}
+      </main>
+      <Footer />
+    </div>
+  );
+}
+

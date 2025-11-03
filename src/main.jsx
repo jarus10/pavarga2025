@@ -1,1 +1,21 @@
-import React from 'react'\nimport { createRoot } from 'react-dom/client'\nimport App from './App.jsx'\nimport './styles.css'\nimport './bg-anim.js'\n\ncreateRoot(document.getElementById('root')).render(\n  <React.StrictMode>\n    <App />\n  </React.StrictMode>\n)\n\n// hide preloader after mount\nwindow.addEventListener('load', ()=>{\n  const pre = document.getElementById('preloader')\n  if(pre){\n    pre.classList.add('preloader-hide')\n    setTimeout(()=>pre.remove(),900)\n  }\n})\n
+import React from 'react'
+import { createRoot } from 'react-dom/client'
+import App from './App.jsx'
+import './styles.css'
+import './bg-anim.js'
+
+createRoot(document.getElementById('root')).render(
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>
+)
+
+// Hide preloader after mount
+window.addEventListener('load', () => {
+  const pre = document.getElementById('preloader')
+  if (pre) {
+    pre.classList.add('preloader-hide')
+    setTimeout(() => pre.remove(), 900)
+  }
+})
+

@@ -1,1 +1,64 @@
-(function(){\n  const canvas = document.createElement('canvas')\n  canvas.id = 'bg-canvas'\n  canvas.style.position = 'fixed'\n  canvas.style.inset = '0'\n  canvas.style.zIndex = '0'\n  canvas.style.pointerEvents = 'none'\n  canvas.style.opacity = '0.95'\n  document.body.appendChild(canvas)\n  const ctx = canvas.getContext('2d')\n  let w = canvas.width = innerWidth, h = canvas.height = innerHeight\n  addEventListener('resize', ()=>{ w=canvas.width=innerWidth; h=canvas.height=innerHeight })\n\n  const particles = []\n  const COUNT = Math.max(18, Math.round((w*h)/160000))\n  for(let i=0;i<COUNT;i++){\n    particles.push({ x:Math.random()*w, y:Math.random()*h, vx:(Math.random()-0.5)*0.6, vy:(Math.random()-0.5)*0.6, r:Math.random()*1.8+0.6 })\n  }\n\n  function loop(){\n    ctx.clearRect(0,0,w,h)\n    const g = ctx.createLinearGradient(0,0,w,h)\n    g.addColorStop(0,'rgba(2,6,23,0.95)'); g.addColorStop(1,'rgba(4,10,30,0.98)')\n    ctx.fillStyle = g; ctx.fillRect(0,0,w,h)\n    ctx.globalCompositeOperation = 'lighter'\n    for(const p of particles){\n      p.x += p.vx + Math.sin((Date.now())/4200)*0.08\n      p.y += p.vy + Math.cos((Date.now())/3300)*0.08\n      if(p.x<-20) p.x = w+20; if(p.x>w+20) p.x=-20\n      if(p.y<-20) p.y = h+20; if(p.y>h+20) p.y=-20\n      const rg = ctx.createRadialGradient(p.x,p.y,0,p.x,p.y,p.r*10)\n      rg.addColorStop(0,'rgba(0,229,255,0.12)'); rg.addColorStop(0.5,'rgba(138,43,226,0.06)'); rg.addColorStop(1,'rgba(138,43,226,0)')\n      ctx.fillStyle = rg; ctx.beginPath(); ctx.arc(p.x,p.y,p.r*6,0,Math.PI*2); ctx.fill()\n    }\n    for(let i=0;i<particles.length;i++){\n      for(let j=i+1;j<particles.length;j++){\n        const a=particles[i], b=particles[j], dx=a.x-b.x, dy=a.y-b.y, d=Math.sqrt(dx*dx+dy*dy)\n        if(d<140){ ctx.beginPath(); ctx.strokeStyle = 'rgba(120,80,200,' + Math.max(0.02,(0.12 - d/140*0.1)) + ')'; ctx.lineWidth=0.6; ctx.moveTo(a.x,a.y); ctx.lineTo(b.x,b.y); ctx.stroke() }\n      }\n    }\n    ctx.globalCompositeOperation='source-over'\n    requestAnimationFrame(loop)\n  }\n  loop()\n})()\n
+(function () {
+  const canvas = document.createElement('canvas');
+  canvas.id = 'bg-canvas';
+  canvas.style.position = 'fixed';
+  canvas.style.top = '0';
+  canvas.style.left = '0';
+  canvas.style.zIndex = '-1';
+  canvas.style.width = '100%';
+  canvas.style.height = '100%';
+  document.body.appendChild(canvas);
+
+  const ctx = canvas.getContext('2d');
+  let width, height;
+  const particles = [];
+  const numParticles = 120;
+
+  function resize() {
+    width = canvas.width = window.innerWidth;
+    height = canvas.height = window.innerHeight;
+  }
+
+  window.addEventListener('resize', resize);
+  resize();
+
+  class Particle {
+    constructor() {
+      this.reset();
+    }
+    reset() {
+      this.x = Math.random() * width;
+      this.y = Math.random() * height;
+      this.vx = (Math.random() - 0.5) * 1.5;
+      this.vy = (Math.random() - 0.5) * 1.5;
+      this.size = Math.random() * 2 + 1;
+    }
+    update() {
+      this.x += this.vx;
+      this.y += this.vy;
+      if (this.x < 0 || this.x > width || this.y < 0 || this.y > height) this.reset();
+    }
+    draw() {
+      ctx.beginPath();
+      ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+      ctx.fillStyle = 'rgba(0, 255, 180, 0.6)';
+      ctx.fill();
+    }
+  }
+
+  for (let i = 0; i < numParticles; i++) {
+    particles.push(new Particle());
+  }
+
+  function animate() {
+    ctx.clearRect(0, 0, width, height);
+    for (let p of particles) {
+      p.update();
+      p.draw();
+    }
+    requestAnimationFrame(animate);
+  }
+
+  animate();
+})();
+
