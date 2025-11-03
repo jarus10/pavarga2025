@@ -1,0 +1,1 @@
+import React from 'react'\nexport default function Footer(){ return (\n  <footer className="site-footer">\n    <div className="container footer-grid">\n      <div>© Pavarga 2025 • KLE Society's S. Nijalingappa College</div>\n      <div className="socials">Contact: <a href=\"mailto:info@klesnc.org\">info@klesnc.org</a> • +91 0000000000</div>\n    </div>\n  </footer>\n) }\n
