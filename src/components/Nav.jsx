@@ -1,89 +1,39 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
 
-export default function Nav({ navigate }) {
-  const [open, setOpen] = useState(false);
-  const go = (p) => {
-    setOpen(false);
-    navigate(p);
-  };
+export default function Nav() {
+  const [menuOpen, setMenuOpen] = useState(false);
+
+  const toggleMenu = () => setMenuOpen(!menuOpen);
+  const closeMenu = () => setMenuOpen(false);
 
   return (
-    <header className="site-header" style={{ position: 'relative', zIndex: 3 }}>
-      <div className="container header-inner">
-        <a
-          className="brand"
-          href="#"
-          onClick={(e) => {
-            e.preventDefault();
-            go('/');
-          }}
-        >
+    <header className="navbar">
+      <div className="navbar-inner">
+        {/* Brand / Logo */}
+        <Link className="brand" to="/" onClick={closeMenu}>
           Pavarga<span className="accent">2025</span>
-        </a>
+        </Link>
 
-        <nav className={open ? 'nav nav-open' : 'nav'}>
-          <a
-            href="#"
-            onClick={(e) => {
-              e.preventDefault();
-              go('/');
-            }}
-          >
-            Home
-          </a>
-          <a
-            href="#"
-            onClick={(e) => {
-              e.preventDefault();
-              go('/events');
-            }}
-          >
-            Events
-          </a>
-          <a
-            href="#"
-            onClick={(e) => {
-              e.preventDefault();
-              go('/registration');
-            }}
-          >
-            Register Here
-          </a>
-          <a
-            href="#"
-            onClick={(e) => {
-              e.preventDefault();
-              go('/contact');
-            }}
-          >
-            Contact
-          </a>
+        {/* Mobile Menu Toggle (Hamburger) */}
+        <button
+          className={`menu-toggle ${menuOpen ? "open" : ""}`}
+          onClick={toggleMenu}
+          aria-label="Toggle navigation"
+        >
+          <span className="bar"></span>
+          <span className="bar"></span>
+          <span className="bar"></span>
+        </button>
+
+        {/* Navigation Links */}
+        <nav className={`nav-links ${menuOpen ? "active" : ""}`}>
+          <Link to="/" onClick={closeMenu}>Home</Link>
+          <Link to="/events" onClick={closeMenu}>Events</Link>
+          <Link to="/register" onClick={closeMenu}>Register</Link>
+          <Link to="/contact" onClick={closeMenu}>Contact</Link>
         </nav>
-
-        <div className="nav-controls">
-          <button
-            className="cta hide-mobile"
-            onClick={() => go('/registration')}
-          >
-            Register Here
-          </button>
-          <button
-            className="hamb"
-            aria-label="menu"
-            onClick={() => setOpen((v) => !v)}
-          >
-            <svg viewBox="0 0 24 24" width="22" height="22">
-              <path
-                d="M3 6h18M3 12h18M3 18h18"
-                stroke="#cfe"
-                strokeWidth="1.6"
-                strokeLinecap="round"
-              />
-            </svg>
-          </button>
-        </div>
       </div>
     </header>
   );
 }
-

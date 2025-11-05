@@ -1,35 +1,31 @@
-import React, { useState } from 'react';
-import Nav from './components/Nav.jsx';
-import Footer from './components/Footer.jsx';
-import Home from './pages/Home.jsx';
-import Events from './pages/Events.jsx';
-import Registration from './pages/Registration.jsx';
-import Team from './pages/Team.jsx';
-import Contact from './pages/Contact.jsx';
+import React from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Nav from "./components/Nav.jsx";
+import Home from "./pages/Home.jsx";
+import Events from "./pages/Events.jsx";
+import Register from "./pages/Register.jsx";
+import Contact from "./pages/Contact.jsx";
+import "./styles.css";
 
-export default function App() {
-  const [route, setRoute] = useState(window.location.pathname || '/');
-
-  window.onpopstate = () => setRoute(window.location.pathname);
-
-  const navigate = (path) => {
-    window.history.pushState({}, '', path);
-    setRoute(path);
-    window.scrollTo(0, 0);
-  };
-
+function App() {
   return (
-    <div className="app">
-      <Nav navigate={navigate} />
-      <main style={{ position: 'relative', zIndex: 2 }}>
-        {route === '/' && <Home navigate={navigate} />}
-        {route === '/events' && <Events navigate={navigate} />}
-        {route === '/registration' && <Registration />}
-        {route === '/team-registration' && <Team />}
-        {route === '/contact' && <Contact />}
+    <Router>
+      <Nav />
+
+      <main className="main-content">
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/events" element={<Events />} />
+          <Route path="/register" element={<Register />} />
+          <Route path="/contact" element={<Contact />} />
+        </Routes>
       </main>
-      <Footer />
-    </div>
+
+      <footer className="footer">
+        © {new Date().getFullYear()} Pavarga 2025 — All rights reserved.
+      </footer>
+    </Router>
   );
 }
 
+export default App;

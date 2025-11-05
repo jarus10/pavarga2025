@@ -1,64 +1,48 @@
-(function () {
-  const canvas = document.createElement('canvas');
-  canvas.id = 'bg-canvas';
-  canvas.style.position = 'fixed';
-  canvas.style.top = '0';
-  canvas.style.left = '0';
-  canvas.style.zIndex = '-1';
-  canvas.style.width = '100%';
-  canvas.style.height = '100%';
-  document.body.appendChild(canvas);
+// === Particle Background Animation ===
 
-  const ctx = canvas.getContext('2d');
-  let width, height;
-  const particles = [];
-  const numParticles = 120;
+// Prevent duplicate canvas when hot reloading in React
+if (!document.getElementById('bg-canvas')) {
+  const canvas = document.createElement('canvas')
+  canvas.id = 'bg-canvas'
+  document.body.prepend(canvas)
 
-  function resize() {
-    width = canvas.width = window.innerWidth;
-    height = canvas.height = window.innerHeight;
-  }
+  const ctx = canvas.getContext('2d')
+  canvas.width = window.innerWidth
+  canvas.height = window.innerHeight
 
-  window.addEventListener('resize', resize);
-  resize();
+  let particles = []
+  const colors = ['#00e5ff', '#8a2be2', '#ff7cfb', '#ffd700', '#00ff95']
 
-  class Particle {
-    constructor() {
-      this.reset();
-    }
-    reset() {
-      this.x = Math.random() * width;
-      this.y = Math.random() * height;
-      this.vx = (Math.random() - 0.5) * 1.5;
-      this.vy = (Math.random() - 0.5) * 1.5;
-      this.size = Math.random() * 2 + 1;
-    }
-    update() {
-      this.x += this.vx;
-      this.y += this.vy;
-      if (this.x < 0 || this.x > width || this.y < 0 || this.y > height) this.reset();
-    }
-    draw() {
-      ctx.beginPath();
-      ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
-      ctx.fillStyle = 'rgba(0, 255, 180, 0.6)';
-      ctx.fill();
-    }
-  }
-
-  for (let i = 0; i < numParticles; i++) {
-    particles.push(new Particle());
+  for (let i = 0; i < 150; i++) {
+    particles.push({
+      x: Math.random() * canvas.width,
+      y: Math.random() * canvas.height,
+      r: Math.random() * 1.5 + 0.5,
+      dx: (Math.random() - 0.5) * 0.3,
+      dy: (Math.random() - 0.5) * 0.3,
+      color: colors[Math.floor(Math.random() * colors.length)]
+    })
   }
 
   function animate() {
-    ctx.clearRect(0, 0, width, height);
-    for (let p of particles) {
-      p.update();
-      p.draw();
-    }
-    requestAnimationFrame(animate);
+    ctx.clearRect(0, 0, canvas.width, canvas.height)
+    particles.forEach(p => {
+      ctx.beginPath()
+      ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2)
+      ctx.fillStyle = p.color
+      ctx.fill()
+      p.x += p.dx
+      p.y += p.dy
+      if (p.x < 0 || p.x > canvas.width) p.dx *= -1
+      if (p.y < 0 || p.y > canvas.height) p.dy *= -1
+    })
+    requestAnimationFrame(animate)
   }
 
-  animate();
-})();
+  animate()
 
+  window.addEventListener('resize', () => {
+    canvas.width = window.innerWidth
+    canvas.height = window.innerHeight
+  })
+}
