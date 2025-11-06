@@ -15,7 +15,7 @@ export default function Events() {
       category: "Gaming",
       date: "13th Sept",
       location: "KLE SNC",
-      entryFee: "₹700 per team",
+      entryFees: "₹700 per team",
       prize1: "₹6,000",
       prize2: "₹3,000",
       rules: [
@@ -32,7 +32,7 @@ export default function Events() {
       category: "Logic & Mystery",
       date: "13th Sept",
       location: "KLE SNC",
-      entryFee: "₹200 per team",
+      entryFees: "₹200 per team",
       prize1: "₹2,000",
       prize2: "₹1,000",
       rules: [
@@ -49,7 +49,7 @@ export default function Events() {
       category: "Fashion & Creativity",
       date: "13th Sept",
       location: "KLE SNC",
-      entryFee: "₹200 per participant",
+      entryFees: "₹200 per participant",
       prize1: "₹2,000",
       prize2: "₹1,000",
       rules: [
@@ -67,7 +67,7 @@ export default function Events() {
       category: "Cooking",
       date: "13th Sept",
       location: "KLE SNC",
-      entryFee: "₹200 per team",
+      entryFees: "₹200 per team",
       prize1: "₹2,000",
       prize2: "₹1,000",
       rules: [
@@ -85,7 +85,7 @@ export default function Events() {
       category: "Marketing & Creativity",
       date: "13th Sept",
       location: "KLE SNC",
-      entryFee: "₹200 per team ",
+      entryFees: "₹200 per team ",
       prize1: "₹2,000",
       prize2: "₹1,000",
       rules: [
@@ -102,7 +102,7 @@ export default function Events() {
       category: "Cultural",
       date: "13th Sept",
       location: "KLE SNC",
-      entryFee: "₹500 per team",
+      entryFees: "₹500 per team",
       prize1: "₹3,500",
       prize2: "₹2,000",
       rules: [
@@ -119,7 +119,7 @@ export default function Events() {
       category: "Cultural",
       date: "13th Sept",
       location: "KLE SNC",
-      entryFee: "₹800 per participant",
+      entryFees: "₹800 per participant",
       prize1: "₹5,000",
       prize2: "₹3,000",
       rules: [
