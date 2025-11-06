@@ -14,20 +14,16 @@ export default function Events() {
       name: "War of Glory",
       category: "Gaming",
       date: "13th Sept",
-      //time: "10 AM onwards",
       location: "KLE SNC",
       entryFees: "₹700 per team",
-      prize1: "₹6,000\n",
+      prize1: "₹6,000",
       prize2: "₹3,000",
       rules: [
         "Teams must consist of 4 members.",
         "Only mobile devices allowed.",
         "Use of emulators or cheats leads to disqualification.",
       ],
-      coordinators: [
-        "Vinay M: +91 8904162546",
-        "Gagan C: +91 7019021959",
-      ],
+      coordinators: ["Vinay M: +91 8904162546", "Gagan C: +91 7019021959"],
       registerLink: "https://forms.gle/q9nQrNzzTsxZFef49",
     },
     {
@@ -35,20 +31,16 @@ export default function Events() {
       name: "Escape Enclave",
       category: "Logic & Mystery",
       date: "13th Sept",
-      //time: "11 AM onwards",
       location: "KLE SNC",
       entryFees: "₹200 per team",
-      prize1: "₹2,000\n",
+      prize1: "₹2,000",
       prize2: "₹1,000",
       rules: [
         "Each team can have up to 3 members.",
         "Solve puzzles and escape within the given time limit.",
         "Hints reduce total score.",
       ],
-      coordinators: [
-        "Abhishek R: +91 7676611925",
-        "Dorothy M: +91 9880214717",
-      ],
+      coordinators: ["Abhishek R: +91 7676611925", "Dorothy M: +91 9880214717"],
       registerLink: "https://forms.gle/7nxKpn9eSDH1KsXU8",
     },
     {
@@ -56,10 +48,9 @@ export default function Events() {
       name: "The Ultimate Makeover Competition",
       category: "Fashion & Creativity",
       date: "13th Sept",
-      //time: "12 PM onwards",
       location: "KLE SNC",
       entryFees: "₹200 per participant",
-      prize1: "₹2,000\n",
+      prize1: "₹2,000",
       prize2: "₹1,000",
       rules: [
         "Participants must bring their own materials.",
@@ -67,7 +58,7 @@ export default function Events() {
         "Judging based on creativity and presentation.",
         "Theme: Futuristic Esque.",
       ],
-      coordinators: ["Yashaswini N: +91 8904694129 "],
+      coordinators: ["Yashaswini N: +91 8904694129"],
       registerLink: "https://forms.gle/kwURDfKRhebkig5K7",
     },
     {
@@ -75,10 +66,9 @@ export default function Events() {
       name: "Clever Chef",
       category: "Cooking",
       date: "13th Sept",
-      //time: "10 AM onwards",
       location: "KLE SNC",
       entryFees: "₹200 per team (2 members)",
-      prize1: "₹2000\n",
+      prize1: "₹2,000",
       prize2: "₹1,000",
       rules: [
         "Dish theme will be revealed on the spot.",
@@ -86,10 +76,7 @@ export default function Events() {
         "No electrical appliances allowed.",
         "Time limit: 2.30 hrs.",
       ],
-      coordinators: [
-        "Kissan : +91 9916214922",
-       
-      ],
+      coordinators: ["Kissan : +91 9916214922"],
       registerLink: "https://forms.gle/MJJ2UhmsrLJsYxKG9",
     },
     {
@@ -97,20 +84,16 @@ export default function Events() {
       name: "Ad-Venture",
       category: "Marketing & Creativity",
       date: "13th Sept",
-      //time: "11 AM onwards",
       location: "KLE SNC",
       entryFees: "₹200 per team (2–5 members)",
-      prize1: "₹2,000\n",
+      prize1: "₹2,000",
       prize2: "₹1,000",
       rules: [
         "Prepare an advertisement for a surprise product.",
         "Performance time: 3–5 minutes.",
         "Exceeding time may result in Negative Marking.",
       ],
-      coordinators: [
-        "Shiva B : +91 9019542427",
-        
-      ],
+      coordinators: ["Shiva B : +91 9019542427"],
       registerLink: "https://forms.gle/TozskjggCSWmUpva9",
     },
     {
@@ -118,20 +101,16 @@ export default function Events() {
       name: "Dance-a-thon",
       category: "Cultural",
       date: "13th Sept",
-      //time: "2 PM onwards",
       location: "KLE SNC",
       entryFees: "₹500 per team",
-      prize1: "₹3,500\n",
+      prize1: "₹3,500",
       prize2: "₹2,000",
       rules: [
         "Theme: Fusion Dance.",
         "Time limit: 3+1 minutes per performance.",
         "Props are allowed but must be safe.",
       ],
-      coordinators: [
-        "Vedhashya: +91 9980719404",
-      
-      ],
+      coordinators: ["Vedhashya: +91 9980719404"],
       registerLink: "https://forms.gle/5ziX3V1Uyw7vUwVs6",
     },
     {
@@ -139,20 +118,16 @@ export default function Events() {
       name: "Fashion Show",
       category: "Cultural",
       date: "13th Sept",
-      //time: "4 PM onwards",
       location: "KLE SNC",
       entryFees: "₹800 per participant",
-      prize1: "₹5,000\n",
+      prize1: "₹5,000",
       prize2: "₹3,000",
       rules: [
         "Theme: Open theme.",
         "Time limit: 3 minutes per team including setup and theme and performance.",
         "Judging based on Attiude, Costume , Theme , Walking stance.",
       ],
-      coordinators: [
-        "Nokia: +91 9900146371",
-       
-      ],
+      coordinators: ["Nokia: +91 9900146371"],
       registerLink: "https://forms.gle/xzoYd4RHxvxgYezh9",
     },
   ];
@@ -175,15 +150,18 @@ export default function Events() {
             <h3 className="event-name">{event.name}</h3>
 
             <p>
-              <strong>Time:</strong> {event.time}
-              <br />
               <strong>Location:</strong> {event.location}
               <br />
               <strong>Entry Fees:</strong> {event.entryFees}
             </p>
 
+            {/* ✅ Fixed alignment for prize section */}
             <p className="prize">
-              🏆 <strong>Prizes:</strong> 1st – {event.prize1}, 2nd – {event.prize2}
+              🏆 <strong>Prizes:</strong>
+              <br />
+              <strong>1st Prize:</strong> {event.prize1}
+              <br />
+              <strong>2nd Prize:</strong> {event.prize2}
             </p>
 
             <div className="event-actions">
@@ -208,12 +186,21 @@ export default function Events() {
         <div className="modal-backdrop" onClick={() => setSelectedEvent(null)}>
           <div className="modal-content" onClick={(e) => e.stopPropagation()}>
             <h2>{selectedEvent.name}</h2>
-            <p><strong>Date:</strong> {selectedEvent.date}</p>
-            <p><strong>Time:</strong> {selectedEvent.time}</p>
-            <p><strong>Location:</strong> {selectedEvent.location}</p>
-            <p><strong>Entry Fee:</strong> {selectedEvent.entryFees}</p>
-            <p><strong>1st Prize:</strong> {selectedEvent.prize1}</p>
-            <p><strong>2nd Prize:</strong> {selectedEvent.prize2}</p>
+            <p>
+              <strong>Date:</strong> {selectedEvent.date}
+            </p>
+            <p>
+              <strong>Location:</strong> {selectedEvent.location}
+            </p>
+            <p>
+              <strong>Entry Fee:</strong> {selectedEvent.entryFees}
+            </p>
+            <p>
+              <strong>1st Prize:</strong> {selectedEvent.prize1}
+            </p>
+            <p>
+              <strong>2nd Prize:</strong> {selectedEvent.prize2}
+            </p>
 
             <h4>Rules & Regulations</h4>
             <ul>
