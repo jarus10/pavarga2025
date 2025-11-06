@@ -5,6 +5,7 @@ export default function Home() {
   const navigate = useNavigate();
 
   const featuredEvents = [
+     { name: "DJ Party", desc: "Open for all student " },
     { name: "War of Glory", desc: "BGMI Mobile Tournament — ₹9000 in prizes" },
     { name: "Escape Enclave", desc: "Team Puzzle Challenge — Think & Escape!" },
     { name: "Dance-a-Thon", desc: "Group Dance — Fusion Theme Performance" },
@@ -21,7 +22,8 @@ export default function Home() {
             <h1 className="hero-title">PAVARGA 2025</h1>
             <p className="lead">
               A National Inter-Collegiate Fest hosted by{" "}
-              <strong>KLE Society’s S. Nijalingappa College</strong>
+           <p><strong>KLE Society’s S. Nijalingappa College</strong></p>
+
             </p>
 
             <div className="hero-actions">
