@@ -49,7 +49,7 @@ export default function Events() {
         "Suresh: +91 78901 23456",
         "Riya: +91 91234 56789",
       ],
-      registerLink: "https://your-form-lihttps://forms.gle/7nxKpn9eSDH1KsXU8",
+      registerLink: "https://forms.gle/7nxKpn9eSDH1KsXU8",
     },
     {
       id: 3,
@@ -88,7 +88,7 @@ export default function Events() {
         "Neha: +91 99988 77665",
         "Rohan: +91 98877 66554",
       ],
-      registerLink: "https://your-form-link-herhttps://forms.gle/MJJ2UhmsrLJsYxKG9",
+      registerLink: "https://forms.gle/MJJ2UhmsrLJsYxKG9",
     },
     {
       id: 5,
@@ -109,7 +109,7 @@ export default function Events() {
         "Arjun: +91 98770 11122",
         "Priya: +91 98760 22233",
       ],
-      registerLink: "https://your-form-link-herehttps://forms.gle/TozskjggCSWmUpva9",
+      registerLink: "https://forms.gle/TozskjggCSWmUpva9",
     },
     {
       id: 6,
@@ -130,7 +130,7 @@ export default function Events() {
         "Tanya: +91 98777 66655",
         "Kiran: +91 99988 44556",
       ],
-      registerLink: "https://your-form-link-herehttps://forms.gle/5ziX3V1Uyw7vUwVs6",
+      registerLink: "https://forms.gle/5ziX3V1Uyw7vUwVs6",
     },
     {
       id: 7,
@@ -151,7 +151,7 @@ export default function Events() {
         "Simran: +91 99880 55443",
         "Manoj: +91 91234 56789",
       ],
-      registerLink: "https://your-form-link-herehttps://forms.gle/xzoYd4RHxvxgYezh9",
+      registerLink: "https://forms.gle/xzoYd4RHxvxgYezh9",
     },
   ];
 
