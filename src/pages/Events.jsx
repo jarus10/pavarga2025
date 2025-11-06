@@ -49,7 +49,7 @@ export default function Events() {
       category: "Fashion & Creativity",
       date: "13th Sept",
       location: "KLE SNC",
-      entryFees: "₹200 per participant",
+      entryFees: "₹200 per team",
       prize1: "₹2,000",
       prize2: "₹1,000",
       rules: [
@@ -119,7 +119,7 @@ export default function Events() {
       category: "Cultural",
       date: "13th Sept",
       location: "KLE SNC",
-      entryFees: "₹800 per participant",
+      entryFees: "₹800 per team",
       prize1: "₹5,000",
       prize2: "₹3,000",
       rules: [
