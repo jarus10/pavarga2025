@@ -3,7 +3,7 @@ import React from "react";
 export default function Register() {
   return (
     <main className="register-page" style={{ padding: "120px 20px", textAlign: "center" }}>
-      <h1 className="section-title">Registration</h1>
+      <h1 className="section-title">Time and Venue </h1>
       <p className="section-subtitle">
         Welcome to <strong>PAVARGA 2025!</strong>  
         Register below to participate in your favorite events.
