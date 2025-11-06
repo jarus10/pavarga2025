@@ -31,7 +31,7 @@ export default function Contact() {
           </p>
 
           <p>
-            ☎️ <a href="tel:+910000000000">+91 00000 00000</a> <br />
+            ☎️ <a href="tel:+918884880296">+91 8884880296</a> <br />
             📧 <a href="mailto:info@klesnc.org">info@klesnc.org</a>
           </p>
 
