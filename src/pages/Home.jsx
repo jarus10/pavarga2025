@@ -5,7 +5,7 @@ export default function Home() {
   const navigate = useNavigate();
 
   const featuredEvents = [
-     { name: "DJ Party", desc: "Open for all student " },
+     { name: "DJ ", desc: "Open for all participants " },
     { name: "War of Glory", desc: "BGMI Mobile Tournament — ₹9000 in prizes" },
     { name: "Escape Enclave", desc: "Team Puzzle Challenge — Think & Escape!" },
     { name: "Dance-a-Thon", desc: "Group Dance — Fusion Theme Performance" },
@@ -30,9 +30,11 @@ export default function Home() {
               <button className="btn primary" onClick={() => navigate("/events")}>
                 Explore Events
               </button>
-              <button className="btn ghost" onClick={() => navigate("/register")}>
+              {/*
+              <button className="btn ghost" onClick={() => navigate("/events")}>
                 Register Now
-              </button>
+              </button>*/
+              */}
             </div>
           </div>
 
