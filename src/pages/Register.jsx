@@ -6,12 +6,12 @@ export default function Register() {
       <h1 className="section-title">Time and Venue </h1>
       <p className="section-subtitle">
         Welcome to <strong>PAVARGA 2025!</strong>  
-        Register below to participate in your favorite events.
+      
       </p>
 
       <div className="register-container" style={{ marginTop: "40px" }}>
         <a
-          href="https://your-google-form-link-here"
+          href="https://forms.gle/vWQbk94i1aBwkRjo6"
           target="_blank"
           rel="noopener noreferrer"
           className="btn primary"
@@ -29,7 +29,7 @@ export default function Register() {
           onMouseOver={(e) => (e.target.style.transform = "translateY(-3px)")}
           onMouseOut={(e) => (e.target.style.transform = "translateY(0)")}
         >
-          Open Google Registration Form
+          View Here
         </a>
       </div>
 
