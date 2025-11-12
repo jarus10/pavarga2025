@@ -36,6 +36,7 @@ export default function Register() {
       <section className="guidelines-preview" style={{ marginTop: "80px" }}>
         <h2 style={{ color: "#00e5ff", marginBottom: "20px" }}>General Guidelines</h2>
         <ul style={{ listStyle: "none", padding: 0, lineHeight: "1.8", color: "rgba(255,255,255,0.85)" }}>
+           <li> No Refunds After Regestrations. </li>
           <li>📘 All participants must carry their college ID card.</li>
           <li>🕒 Arrive at least 30 minutes before your event.</li>
           <li>🎯 Follow all event-specific rules shared by coordinators.</li>

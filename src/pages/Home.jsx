@@ -29,12 +29,10 @@ export default function Home() {
             <div className="hero-actions">
               <button className="btn primary" onClick={() => navigate("/events")}>
                 Explore Events
-              </button>
-              {/*
+              </button>{/*}
               <button className="btn ghost" onClick={() => navigate("/events")}>
                 Register Now
-              </button>*/
-              */}
+              </button> */} 
             </div>
           </div>
 
@@ -98,11 +96,13 @@ export default function Home() {
       <section className="guidelines-preview">
         <h2>General Guidelines</h2>
         <ul>
+
           <li>All participants must carry their college ID card.</li>
           <li>Report at least 30 minutes before your event.</li>
           <li>Follow event-specific rules shared by coordinators.</li>
           <li>Respect campus property and maintain decorum.</li>
           <li>Organizers’ decisions are final and binding.</li>
+          <li>No Refunds After Regestrations.</li>
         </ul>
         <button className="btn ghost" onClick={() => navigate("/register")}>
           Read More & Register →
